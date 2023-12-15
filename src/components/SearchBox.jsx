@@ -1,7 +1,7 @@
 import React from 'react'
-import { useState, useEffect, useRef } from 'react'
+import { useState } from 'react'
 
-function SearchBox(getCharacter) {
+function SearchBox(props) {
     const [formData, setFormData] = useState ({searchTerm: ''})
 
     const handleChange = (e) => {
@@ -12,14 +12,14 @@ function SearchBox(getCharacter) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        getCharacter.charactersSearch(formData.searchTerm)
+        props.charactersSearch(formData.searchTerm)
     }
 
   return (
    <>
-   
+   <div>Find Character
     <form onSubmit={handleSubmit}>
-         <div>Find Character
+         
          <input 
             type='text'
             name='searchTerm'
@@ -27,9 +27,9 @@ function SearchBox(getCharacter) {
             value={formData.searchTerm}
          />
          <input type="submit" value='submit'/>
-         </div>
+         
     </form>
-    
+    </div>
     </>
   )
 }
