@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react'
+import "bootstrap/dist/css/bootstrap.min.css"
+import "bootstrap/dist/js/bootstrap"
 import Header from './components/Header'
 // import { getCharacter } from 'rickmortyapi'
 import SearchBox from './components/SearchBox'

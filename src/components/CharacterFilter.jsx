@@ -22,7 +22,8 @@ function CharacterFilter() {
         characters = {name}
         location ={location} 
         gender ={gender}
-        image ={image} />
+        image ={image}
+        origin = {species} />
          
         
        

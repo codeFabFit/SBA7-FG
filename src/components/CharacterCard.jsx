@@ -16,7 +16,9 @@ const CharacterCard = ({results})=> {
                             <div className="content">
                                 <div className="fs-4">{gender}</div>
                                 <div className="fs-4">{status}</div>
-                                <div className="fs-6">{location}</div>
+                                <div className="fs-6">{location.name}</div>
+                                <div className="fs-6">{origin.species}</div>
+
                                 </div>
                             </div>
                         </div>

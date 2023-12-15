@@ -1,16 +1,16 @@
 import React from "react";
 
 
-export default function CharacterDisplay({ character }) {
+export default function CharacterDisplay({ props }) {
     const loaded = () => {
         return ( 
              <>
               <container className = "characterList">
                     <h1>{props.character.name}</h1> 
-                    <h2>{character.gender}</h2>
-                    <img src={character.image} alt={character.name} />
-                    <h3>{character.episode}</h3>
-                    <h3>{character.species}</h3>
+                    <h2>{props.character.gender}</h2>
+                    <img src={props.character.image} alt={props.character.name} />
+                    <h3>{props.character.episode}</h3>
+                    <h3>{props.character.species}</h3>
                 </container> 
              </>
                 )
@@ -18,6 +18,6 @@ export default function CharacterDisplay({ character }) {
   const loading = () => {
     return <h1>Your results</h1>
   }
-  return character ? loaded() : loading();
+  return props ? loaded() : loading();
 }
 
