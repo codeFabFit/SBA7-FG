@@ -1,0 +1,19 @@
+/* have background with black and white words *{
+    background-image: url(/images/43f90-16747246599742-1920.avif);
+} */
+
+.header{
+    display: flex;
+     align-content: center;
+    justify-content: center; 
+    font-family: 'serif';
+    color:greenyellow;
+    
+}
+
+.subheader{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    color: rgb(2, 38, 67);
+}
