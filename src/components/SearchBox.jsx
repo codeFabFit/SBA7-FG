@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from 'react'
 import { useState } from 'react'
 
@@ -12,12 +13,14 @@ function SearchBox(props) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        // eslint-disable-next-line react/prop-types
         props.charactersSearch(formData.searchTerm)
     }
 
   return (
    <>
-   <div>Find Character
+   <div className='search'>
+    Find Character
     <form onSubmit={handleSubmit}>
          
          <input 

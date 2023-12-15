@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react'
+// eslint-disable-next-line no-unused-vars
+import { react, useState, useEffect } from 'react'
 import "bootstrap/dist/css/bootstrap.min.css"
 import "bootstrap/dist/js/bootstrap"
 import Header from './components/Header'
@@ -6,7 +7,8 @@ import Header from './components/Header'
 import SearchBox from './components/SearchBox'
 import CharacterDisplay from './components/CharacterDisplay'
 import CharacterCard from './components/CharacterCard'
-import CharacterFilter from './components/CharacterFilter'
+
+
 
 
 function App() {
@@ -26,8 +28,23 @@ useEffect (() => {
   return (
     <>
     <Header />
-      <h1>Rick and Morty Universe</h1>
+      <h1 className='title'>Rick and Morty Universe</h1>
       <SearchBox  charactersSearch ={getCharacter}/>
+      <container className="container">
+      <div className="col-8">The Characters
+      <div className="row"> 
+      <CharacterCard />
+      
+
+
+        {/* <div className="col">Cards</div>
+        <div className="col">Cards</div>
+        <div className="col">Cards</div>
+        <div className="col">Cards</div> */}
+
+      </div>
+      </div>
+      </container>
       <br />
       <br />
       <h1>The Charcater you search for is ...</h1>
@@ -35,7 +52,7 @@ useEffect (() => {
       
       <br />
       <br />
-      <CharacterCard characters={CharacterFilter} />
+      <CharacterCard characters={CharacterCard} />
     </>
   )
 }
