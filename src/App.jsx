@@ -11,6 +11,7 @@ import CharacterDisplay from './components/CharacterDisplay'
 // eslint-disable-next-line no-unused-vars
 import ReactPaginate from 'react-paginate'
 import PageNum from './components/PageNum'
+import NavBar from './components/NavBar'
 
 
 
@@ -41,6 +42,7 @@ const getCharacter = async () => {
 
   return (
     <>
+    <NavBar />
     <Header />
       <h1 className='title'>Rick and Morty Universe</h1>
       
