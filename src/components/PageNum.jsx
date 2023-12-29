@@ -1,8 +1,9 @@
+// eslint-disable-next-line no-unused-vars
 import React from 'react'
 import ReactPaginate from 'react-paginate'
 
 // eslint-disable-next-line react/prop-types
-const Pages = ({ info, pageNumber, setPageNumber }) => {
+const PageNum = ({ info, pageNumber, setPageNumber }) => {
   // let Next = () => {
   //   setPageNumber((first) => first + 1)
   // }
@@ -15,12 +16,18 @@ const Pages = ({ info, pageNumber, setPageNumber }) => {
   // using react pagation instead of hard coding 
   return (
     <ReactPaginate 
-    className='pagination justify-content-center' 
+    forcePage={ pageNumber===1? 0 : pageNumber -1 }
+    className='pagination justify-content-center gap-4 my-4' 
     nextLabel="next"
     previousLabel= "prev"
     nextClassName='btn btn-primary'
     previousClassName='btn btn-primary'
-
+    pageClassName='page-item'
+    pageLinkClassName='page-link'
+    activeClassName='active'
+    onPageChange={(data) => {
+      setPageNumber(data.selected + 1)
+    }}
     pageCount ={info?.pages} />
   
     // <div className="container d-flex justify-content-center gap-5 my-10">
@@ -31,4 +38,4 @@ const Pages = ({ info, pageNumber, setPageNumber }) => {
   )
 }
 
-export default Pages
+export default PageNum

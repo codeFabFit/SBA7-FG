@@ -8,8 +8,8 @@ import Header from './components/Header'
 import SearchBox from './components/SearchBox'
 import CharacterDisplay from './components/CharacterDisplay'
 // import CharacterCard from './components/CharacterCard'
-import Pages from './components/Pages'
 import ReactPaginate from 'react-paginate'
+import PageNum from './components/PageNum'
 
 
 
@@ -25,8 +25,9 @@ function App() {
   
 useEffect (() => {
 const getCharacter = async () => { 
-    //  (`https://rickandmortyapi.com/api/character?name`);
-   const response = await fetch `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${searchTerm}`
+    //  (`https://rickandmortyapi.com/api/character?name=${searchTerm}&page=${pageNumber}`);
+   const response = await fetch (`https://rickandmortyapi.com/api/character?name=${searchTerm}&page=${pageNumber}`);
+  //  `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${searchTerm}`
   const data = await response.json()
 
   
@@ -60,7 +61,7 @@ const getCharacter = async () => {
       <br />
      
       {/* <CharacterCard characters={CharacterCard}/> */}
-      <Pages pageNumber={pageNumber} setPageNumber={setPageNumber}/>
+      <PageNum pageNumber={pageNumber} setPageNumber={setPageNumber}/>
 
 
       {/* <CharacterDisplay getCharacter={characters}/> */}
