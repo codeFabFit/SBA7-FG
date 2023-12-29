@@ -1,9 +1,10 @@
 /* eslint-disable no-unused-vars */
 import React from 'react'
 import { useState } from 'react'
+// import style from './SearchBox.css'
 
 function SearchBox(props) {
-    const [formData, setFormData] = useState ({searchTerm: ''})
+    const [formData, setFormData] = useState ({searchTerm: " "})
 
     const handleChange = (e) => {
         setFormData({
@@ -20,16 +21,17 @@ function SearchBox(props) {
   return (
    <>
    <div className='search'>
-    Find Character
+    {/* Find Character */}
     <form onSubmit={handleSubmit}>
          
          <input 
             type='text'
             name='searchTerm'
+            placeholder='Search for a character'
             onChange={handleChange}
             value={formData.searchTerm}
          />
-         <input type="submit" value='submit'/>
+         <input type='submit' value='submit'/>
          
     </form>
     </div>

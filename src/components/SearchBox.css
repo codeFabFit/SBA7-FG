@@ -1,7 +1,9 @@
-.submit{
+.search{
     display: flex;
+    color: blue;
     align-items: flex-start;
     box-sizing: border-box;
     box-shadow: 10px;
     padding: 10px;
+    
 }

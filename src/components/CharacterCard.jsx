@@ -2,6 +2,7 @@
 import React from 'react'
 
 
+
 const CharacterCard = ({results})=> {
     let display
     // console.log(results);
@@ -10,6 +11,7 @@ const CharacterCard = ({results})=> {
         display = results.map((x) =>{
             let {id, name, image, gender, status, location, origin} = x;
             return (
+                
                 <div key ={id} className="col-4 postion-relative">
                     <div className=''>
                         <img src={image} alt=" "className='img-fluid'/>

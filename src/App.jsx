@@ -7,14 +7,18 @@ import Header from './components/Header'
 import SearchBox from './components/SearchBox'
 import CharacterDisplay from './components/CharacterDisplay'
 import CharacterCard from './components/CharacterCard'
+import Pages from './components/Pages'
 
 
 
 
 function App() {
   const [characters, setCharacter] = useState(null)
-  const getCharacter = async (searchTerm) => {
-    const response = await fetch (`https://rickandmortyapi.com/api/character?name=${searchTerm}`);
+  const [pageNumber, setPageNumber] = useState(1)
+  console.log(pageNumber)
+  const getCharacter = async () => { 
+    //  (`https://rickandmortyapi.com/api/character?name`);
+   const response = await fetch `https://rickandmortyapi.com/api/character/?page=1`
   const data = await response.json()
   // getCharacter(data)
   // console.log(character)
@@ -30,29 +34,32 @@ useEffect (() => {
     <Header />
       <h1 className='title'>Rick and Morty Universe</h1>
       
-      <container className="container">
+      <section className="container">
       <div className="col-8">The Characters
       <div className="row"> 
-      <CharacterCard />
+      <br />
+      <br />
       <SearchBox  charactersSearch ={getCharacter}/>
-
+      <br />
+      <br />
 
         {/* <div className="col">Cards</div>
         <div className="col">Cards</div>
         <div className="col">Cards</div>
         <div className="col">Cards</div> */}
-
       </div>
       </div>
-      </container>
-      <br />
-      <br />
-      <h1>The Charcater you search for is ...</h1>
-      <CharacterDisplay getCharacter={characters}/>
+      </section>
       
       <br />
       <br />
-      <CharacterCard characters={CharacterCard} />
+      <CharacterDisplay getCharacter={characters}/>
+      <CharacterCard characters={CharacterCard}/>
+      <Pages pageNumber={pageNumber} setPageNumber={setPageNumber}/>
+      <br />
+      <br />
+      {/* <CharacterCard  /> */}
+      
     </>
   )
 }
