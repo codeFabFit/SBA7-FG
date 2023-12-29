@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 // eslint-disable-next-line no-unused-vars
 import React from 'react'
 import ReactPaginate from 'react-paginate'
@@ -24,7 +25,7 @@ const PageNum = ({ info, pageNumber, setPageNumber }) => {
     previousClassName='btn btn-primary'
     pageClassName='page-item'
     pageLinkClassName='page-link'
-    activeClassName='active'
+    // activeClassName='active'
     onPageChange={(data) => {
       setPageNumber(data.selected + 1)
     }}

@@ -5,7 +5,7 @@ import { useState } from 'react'
 
 function SearchBox(props) {
     // const [formData, setFormData] = useState ({searchTerm: " "})
-    const [searchTerm, setSeachTerm, setPageNumber] = useState("")
+    const [setPageNumber, searchTerm, setSeachTerm] = useState("")
 
     const onChange = (e) => {
         setSeachTerm({

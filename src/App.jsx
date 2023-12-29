@@ -8,6 +8,7 @@ import Header from './components/Header'
 import SearchBox from './components/SearchBox'
 import CharacterDisplay from './components/CharacterDisplay'
 // import CharacterCard from './components/CharacterCard'
+// eslint-disable-next-line no-unused-vars
 import ReactPaginate from 'react-paginate'
 import PageNum from './components/PageNum'
 
@@ -17,7 +18,7 @@ function App() {
   const [, setCharacter ] = useState(null)
   const [searchTerm, setSeachTerm] = useState("")
   const [pageNumber, setPageNumber] = useState(1)
-  const [fetchdData, updatedFetchedData] = useState([])
+  const [fetchedData, updatedFetchedData] = useState([])
   // const [info, results] = fetchedData
   
   console.log(pageNumber)
@@ -30,15 +31,13 @@ const getCharacter = async () => {
   //  `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${searchTerm}`
   const data = await response.json()
 
-  
   // getCharacter(data)
   // console.log(character)
   setCharacter(data.results)
   console.log(data.results)
 } 
-  
   getCharacter()
-}, [])
+}, [fetchedData])
 
   return (
     <>
@@ -50,7 +49,7 @@ const getCharacter = async () => {
       <div className="row"> 
       <br />
       <br />
-      <SearchBox setPageNumber={setPageNumber} searchTerm={setSeachTerm}/>
+      <SearchBox setPageNumber={setPageNumber} searchTerm={setSeachTerm} updatedFetchedData={updatedFetchedData}/>
       <br />
       <br />
       </div>
