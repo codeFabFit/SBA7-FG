@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 // eslint-disable-next-line no-unused-vars
 import { react, useState, useEffect } from 'react'
 import "bootstrap/dist/css/bootstrap.min.css"
@@ -6,26 +7,35 @@ import Header from './components/Header'
 // import { getCharacter } from 'rickmortyapi'
 import SearchBox from './components/SearchBox'
 import CharacterDisplay from './components/CharacterDisplay'
-import CharacterCard from './components/CharacterCard'
+// import CharacterCard from './components/CharacterCard'
 import Pages from './components/Pages'
-
+import ReactPaginate from 'react-paginate'
 
 
 
 function App() {
-  const [characters, setCharacter] = useState(null)
+  const [, setCharacter ] = useState(null)
+  const [searchTerm, setSeachTerm] = useState("")
   const [pageNumber, setPageNumber] = useState(1)
+  const [fetchdData, updatedFetchedData] = useState([])
+  // const [info, results] = fetchedData
+  
   console.log(pageNumber)
-  const getCharacter = async () => { 
+  console.log(searchTerm)
+  
+useEffect (() => {
+const getCharacter = async () => { 
     //  (`https://rickandmortyapi.com/api/character?name`);
-   const response = await fetch `https://rickandmortyapi.com/api/character/?page=1`
+   const response = await fetch `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${searchTerm}`
   const data = await response.json()
+
+  
   // getCharacter(data)
   // console.log(character)
   setCharacter(data.results)
   console.log(data.results)
 } 
-useEffect (() => {
+  
   getCharacter()
 }, [])
 
@@ -39,7 +49,7 @@ useEffect (() => {
       <div className="row"> 
       <br />
       <br />
-      <SearchBox  charactersSearch ={getCharacter}/>
+      <SearchBox setPageNumber={setPageNumber} searchTerm={setSeachTerm}/>
       <br />
       <br />
       </div>
@@ -49,12 +59,12 @@ useEffect (() => {
       <br />
       <br />
      
-      <CharacterCard characters={CharacterCard}/>
+      {/* <CharacterCard characters={CharacterCard}/> */}
       <Pages pageNumber={pageNumber} setPageNumber={setPageNumber}/>
 
 
-      <CharacterDisplay getCharacter={characters}/>
-
+      {/* <CharacterDisplay getCharacter={characters}/> */}
+      <CharacterDisplay characters= {setCharacter} />
       <br />
       <br />
       {/* <CharacterCard  /> */}

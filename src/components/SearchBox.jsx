@@ -4,18 +4,19 @@ import { useState } from 'react'
 // import style from './SearchBox.css'
 
 function SearchBox(props) {
-    const [formData, setFormData] = useState ({searchTerm: " "})
+    // const [formData, setFormData] = useState ({searchTerm: " "})
+    const [searchTerm, setSeachTerm, setPageNumber] = useState("")
 
-    const handleChange = (e) => {
-        setFormData({
-            ...formData,
+    const onChange = (e) => {
+        setSeachTerm({
+            ...searchTerm,
             [e.target.name]: e.target.value})
     }
 
     const handleSubmit = (e) => {
-        e.preventDefault();
+        e.preventDefault()
         // eslint-disable-next-line react/prop-types
-        props.charactersSearch(formData.searchTerm)
+        props.charactersSearch(searchTerm.searchTerm)
     }
 
   return (
@@ -28,11 +29,18 @@ function SearchBox(props) {
             type='text'
             name='searchTerm'
             placeholder='Search for a character'
-            onChange={handleChange}
-            value={formData.searchTerm}
-         />
+            // onChange={handleChange}
+            onChange={(e) => {
+              setPageNumber(1)
+              setPageNumber(e.target.value)
+            }}
+            value={searchTerm.searchTerm}
          
-         <button className="btn btn-primary">Submit</button>
+         />
+         <button onClick={(e)=>{
+          e.preventDefault()
+        }} 
+        className="btn btn-primary">Submit</button>
          {/* <input className='sumbit' type='submit' value='submit'/> */}
          
     </form>
