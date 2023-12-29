@@ -29,12 +29,12 @@ useEffect (() => {
     <>
     <Header />
       <h1 className='title'>Rick and Morty Universe</h1>
-      <SearchBox  charactersSearch ={getCharacter}/>
+      
       <container className="container">
       <div className="col-8">The Characters
       <div className="row"> 
       <CharacterCard />
-      
+      <SearchBox  charactersSearch ={getCharacter}/>
 
 
         {/* <div className="col">Cards</div>
