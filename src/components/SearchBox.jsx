@@ -31,7 +31,9 @@ function SearchBox(props) {
             onChange={handleChange}
             value={formData.searchTerm}
          />
-         <input type='submit' value='submit'/>
+         
+         <button className="btn btn-primary">Submit</button>
+         {/* <input className='sumbit' type='submit' value='submit'/> */}
          
     </form>
     </div>

@@ -20,7 +20,7 @@ export default function CharacterDisplay({ props }) {
                 )
                         }
   const loaded = () => {
-    return <h1>Your results</h1>
+    return <h1>drumroll</h1>
   }
   return props ? loading() : loaded();
 }

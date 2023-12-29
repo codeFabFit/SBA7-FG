@@ -11,11 +11,11 @@ const Pages = ({ pageNumber, setPageNumber }) => {
   }
 
   return (
-    <div className="container d-flex justify-content-center gap-10 my-8">
+    <div className="container d-flex justify-content-center gap-5 my-10">
       <button onClick={Previous} className="btn btn-primary">Previous</button>
       <button onClick={Next} className="btn btn-primary">Next</button>
 
-      Pagination
+      
     </div>
   )
 }

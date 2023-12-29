@@ -8,6 +8,8 @@ function Header() {
     {/* <image src="./images/images.png"></image> */}
     <h1 className="header">Welcome to the Rick and Morty Universe</h1>
     <p className="subheader">Wubba Dubba Dub Dub </p>
+    <p className="subheader"> Im a genius Morty </p>
+
     </>
   )
 }

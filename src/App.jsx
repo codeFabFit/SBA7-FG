@@ -42,20 +42,19 @@ useEffect (() => {
       <SearchBox  charactersSearch ={getCharacter}/>
       <br />
       <br />
-
-        {/* <div className="col">Cards</div>
-        <div className="col">Cards</div>
-        <div className="col">Cards</div>
-        <div className="col">Cards</div> */}
       </div>
       </div>
       </section>
       
       <br />
       <br />
-      <CharacterDisplay getCharacter={characters}/>
+     
       <CharacterCard characters={CharacterCard}/>
       <Pages pageNumber={pageNumber} setPageNumber={setPageNumber}/>
+
+
+      <CharacterDisplay getCharacter={characters}/>
+
       <br />
       <br />
       {/* <CharacterCard  /> */}
@@ -66,3 +65,9 @@ useEffect (() => {
 
 
 export default App
+
+
+  {/* <div className="col">Cards</div>
+        <div className="col">Cards</div>
+        <div className="col">Cards</div>
+        <div className="col">Cards</div> */}
