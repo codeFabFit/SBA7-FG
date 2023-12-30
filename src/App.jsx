@@ -18,6 +18,7 @@ import NavBar from './components/NavBar'
 function App() {
   const [, setCharacter ] = useState(null)
   const [searchTerm, setSeachTerm] = useState("")
+  // const [ formData, setFormData] = useState()
   const [pageNumber, setPageNumber] = useState(1)
   const [fetchedData, updatedFetchedData] = useState([])
   const [info, results] = fetchedData
@@ -37,8 +38,9 @@ const getCharacter = async () => {
   setCharacter(data.results)
   console.log(data.results)
 } 
+
   getCharacter(results)
-}, [fetchedData])
+}, [])
 
   return (
     <>
@@ -46,9 +48,9 @@ const getCharacter = async () => {
     <Header />
       <h1 className='title'>Rick and Morty Universe</h1>
       
-      <section className="container">
-      <div className="col-8">The Characters
-      <div className="row"> 
+      {/* <section className="container"> */}
+      {/* <div className="col-8">The Characters
+      <div className="row">  */}
       <br />
       <br />
       <SearchBox 
@@ -58,10 +60,13 @@ const getCharacter = async () => {
       />
       <br />
       <br />
-      </div>
-      </div>
-      </section>
+      {/* </div>
+      </div> */}
+      {/* </section> */}
+      <CharacterDisplay 
       
+      results={results}
+      characters= {setCharacter} />
       <br />
       <br />
      
@@ -73,12 +78,11 @@ const getCharacter = async () => {
 
 
       {/* <CharacterDisplay getCharacter={characters}/> */}
-      <CharacterDisplay 
-      characters= {setCharacter} 
-      />
+      
+      
       <br />
       <br />
-      {/* <CharacterCard  /> */}
+
       
     </>
   )

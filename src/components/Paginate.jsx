@@ -1,10 +1,11 @@
 /* eslint-disable react/prop-types */
 // eslint-disable-next-line no-unused-vars
 import React from 'react'
-import ReactPaginate from 'react-paginate'
+// import ReactPaginate from 'react-paginate'
 
-// eslint-disable-next-line react/prop-types
-const Paginate = ({ info, pageNumber, setPageNumber }) => {
+// eslint-disable-next-line react/prop-types 
+// info for setting page number if needed
+const Paginate = ({ pageNumber, setPageNumber }) => {
   let Next = () => {
     setPageNumber((first) => first + 1)
   }

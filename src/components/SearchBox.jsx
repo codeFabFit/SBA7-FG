@@ -1,22 +1,78 @@
 /* eslint-disable no-unused-vars */
 import React from 'react'
 import { useState } from 'react'
-import style from './SearchBox.css'
+import { getCharacter } from 'rickmortyapi'
+import { ReactPropTypes } from 'react'
+// import style from './SearchBox.css'
 
 
+function SearchBox(props) {
+  const [formData, setFormData] = useState ({searchTerm: ''})
+  let getCharacter
 
-const SearchBox = () => {
-  return (
-    <>
-    <form className='d-flex justify-content-center'>
-      <input placeholder='Search for character' type="text" className={style.input}></input>
-      <button className='btn btn-primary fs-5'>Search</button>
-    </form>
-    </>
-  )
+  const handleChange = (e) => {
+      setFormData({
+          ...formData,
+          [e.target.name]: e.target.value})
+  }
+
+  const handleSubmit = (e) => {
+      e.preventDefault();
+
+      // eslint-disable-next-line react/prop-types
+      // props.getCharacter(formData.searchTerm)
+
+      // const charactersResult =
+      // getCharacter.charactersSearch(formData.searchTerm)
+      // console.log(charactersResult)
+  }
+
+return (
+ <>
+ <div>
+  <form onSubmit={handleSubmit}>
+       
+       <input 
+          type='text'
+          placeholder='Search for character' 
+          name='searchTerm'
+          onChange={handleChange}
+          value={formData.searchTerm}
+       />
+       <input className='btn btn-primary fs-5' type="submit" value='submit'/>
+       
+  </form>
+  </div>
+  </>
+)
 }
 
 export default SearchBox
+
+
+
+
+
+// const SearchBox = ({ setSearchTerm, setPageNumber }) => {
+//   return (
+//     <>
+//     <form className='d-flex justify-content-center'>
+//       <input 
+//       onChange={(e) => {
+//         setPageNumber(1)
+//         setSearchTerm(e.target.value)
+//       }}
+//       placeholder='Search for character' 
+//       type="text" 
+//       className={style.input}>
+//       </input>
+//       <button className='btn btn-primary fs-5'>Search</button>
+//     </form>
+//     </>
+//   )
+// }
+
+
 
 // function SearchBox(props) {
 //     // const [formData, setFormData] = useState ({searchTerm: " "})
@@ -38,25 +94,22 @@ export default SearchBox
 //    <>
 //    <div className='search'>
 //     {/* Find Character */}
-//     <form onSubmit={handleSubmit}>
+//     <form>
          
-//          <input 
-//          className=''
-//             type='text'
-//             name='searchTerm'
-//             placeholder='Search for a character'
-//             // onChange={handleChange}
-//             onChange={(e) => {
-//               setPageNumber(1)
-//               setPageNumber(e.target.value)
-//             }}
-//             value={searchTerm.searchTerm}
-         
-//          />
-//          <button onClick={(e)=>{
+//     <input 
+//     onChange={(e) => {
+//       e.preventDefault()
+//     }}
+//       placeholder='Search for character' 
+//       type="text" 
+//       className="input">
+//       </input>
+//       <button 
+//       onClick={(e)=>{
 //           e.preventDefault()
 //         }} 
-//         className="btn btn-primary">Submit</button>
+//         className='btn btn-primary fs-5'>Search</button>
+     
 //          {/* <input className='sumbit' type='submit' value='submit'/> */}
          
 //     </form>
@@ -64,3 +117,4 @@ export default SearchBox
 //     </>
 //   )
 // }
+// export default SearchBox
