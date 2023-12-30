@@ -10,7 +10,7 @@ import CharacterDisplay from './components/CharacterDisplay'
 // import CharacterCard from './components/CharacterCard'
 // eslint-disable-next-line no-unused-vars
 import ReactPaginate from 'react-paginate'
-import PageNum from './components/PageNum'
+import Paginate from './components/Paginate'
 import NavBar from './components/NavBar'
 
 
@@ -20,7 +20,7 @@ function App() {
   const [searchTerm, setSeachTerm] = useState("")
   const [pageNumber, setPageNumber] = useState(1)
   const [fetchedData, updatedFetchedData] = useState([])
-  // const [info, results] = fetchedData
+  const [info, results] = fetchedData
   
   console.log(pageNumber)
   console.log(searchTerm)
@@ -37,7 +37,7 @@ const getCharacter = async () => {
   setCharacter(data.results)
   console.log(data.results)
 } 
-  getCharacter()
+  getCharacter(results)
 }, [fetchedData])
 
   return (
@@ -51,7 +51,11 @@ const getCharacter = async () => {
       <div className="row"> 
       <br />
       <br />
-      <SearchBox setPageNumber={setPageNumber} searchTerm={setSeachTerm} updatedFetchedData={updatedFetchedData}/>
+      <SearchBox 
+      setPageNumber={setPageNumber} 
+      searchTerm={setSeachTerm} 
+      updatedFetchedData={updatedFetchedData}
+      />
       <br />
       <br />
       </div>
@@ -62,11 +66,16 @@ const getCharacter = async () => {
       <br />
      
       {/* <CharacterCard characters={CharacterCard}/> */}
-      <PageNum pageNumber={pageNumber} setPageNumber={setPageNumber}/>
+      <Paginate 
+      info ={info}
+      pageNumber={pageNumber} 
+      setPageNumber={setPageNumber}/>
 
 
       {/* <CharacterDisplay getCharacter={characters}/> */}
-      <CharacterDisplay characters= {setCharacter} />
+      <CharacterDisplay 
+      characters= {setCharacter} 
+      />
       <br />
       <br />
       {/* <CharacterCard  /> */}
