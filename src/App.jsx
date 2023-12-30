@@ -35,7 +35,7 @@ function App() {
 const Home = () => {
   const [, setCharacter ] = useState(null)
   const [searchTerm, setSeachTerm] = useState("")
-  // const [ formData, setFormData] = useState()
+  const [formData, setFormData] = useState("")
   const [pageNumber, setPageNumber] = useState(1)
   const [fetchedData, updatedFetchedData] = useState([])
   const [info, results] = fetchedData
@@ -80,7 +80,7 @@ const getCharacter = async () => {
       </div> */}
       {/* </section> */}
       <CharacterDisplay 
-      
+      formData={setFormData}
       results={results}
       characters= {setCharacter} />
       <br />

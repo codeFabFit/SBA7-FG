@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from 'react'
 import { NavLink, Link} from 'react-router-dom'
 
@@ -14,7 +15,11 @@ const NavBar = () => {
     aria-controls="navbarNav" 
     aria-expanded="false" 
     aria-label="Toggle navigation">
-      <span className="navbar-toggler-icon"></span>
+      {/* <span className="navbar-toggler-icon"></span> */}
+
+      <i className='fas-fa-bars open'>options</i>
+      <i className='fas fa-times closed'></i>
+
     </button>
     <div 
     className="collapse navbar-collapse justify-content-end" 
