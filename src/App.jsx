@@ -13,6 +13,8 @@ import ReactPaginate from 'react-paginate'
 import Paginate from './components/Paginate'
 import NavBar from './components/NavBar'
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
+import Episodes from './components/Episodes'
+import Location from './components/Location'
 
 function App() {
   return (
@@ -21,7 +23,10 @@ function App() {
         <NavBar />
       </div>
 <Routes>
-  <Route path='/' element={} />
+  <Route path='/' element={<Home/>} />
+  <Route path='/episodes' element={<Episodes/>} />
+  <Route path='/location' element={<Location/>} />
+
 </Routes>
     </Router>
   )

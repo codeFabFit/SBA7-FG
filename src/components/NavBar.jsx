@@ -1,37 +1,32 @@
 import React from 'react'
+import { NavLink, Link} from 'react-router-dom'
 
 const NavBar = () => {
   return (
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container">
-   <h1 className='navbar-brand'><code>Rick and Morty Universe</code></h1>
+    <nav className="navbar navbar-expand-lg bg-body-tertiary">
+  <div className="container">
+   <Link to="/" className='navbar-brand'><code>Rick and Morty Universe</code></Link>
     <button 
-    class="navbar-toggler" 
+    className="navbar-toggler" 
     type="button" 
     data-bs-toggle="collapse" 
     data-bs-target="#navbarNav" 
     aria-controls="navbarNav" 
     aria-expanded="false" 
     aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+      <span className="navbar-toggler-icon"></span>
     </button>
     <div 
-    class="collapse navbar-collapse justify-content-end" 
+    className="collapse navbar-collapse justify-content-end" 
     id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-        </li>
-      </ul>
+      <div className="navbar-nav fs-5">
+          <NavLink to="/" className="nav-link active" aria-current="page" >Characters</NavLink>
+       
+          <NavLink to="/episodes"className="nav-link">Episodes</NavLink>
+        
+          <NavLink to="/location"className="nav-link" >Location</NavLink>
+        
+      </div>
     </div>
   </div>
 </nav>
