@@ -12,10 +12,22 @@ import CharacterDisplay from './components/CharacterDisplay'
 import ReactPaginate from 'react-paginate'
 import Paginate from './components/Paginate'
 import NavBar from './components/NavBar'
-
-
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 
 function App() {
+  return (
+    <Router>
+      <div className='App'>
+        <NavBar />
+      </div>
+<Routes>
+  <Route path='/' element={} />
+</Routes>
+    </Router>
+  )
+}
+
+const Home = () => {
   const [, setCharacter ] = useState(null)
   const [searchTerm, setSeachTerm] = useState("")
   // const [ formData, setFormData] = useState()
@@ -24,7 +36,7 @@ function App() {
   const [info, results] = fetchedData
   
   console.log(pageNumber)
-  console.log(searchTerm)
+  console.log(results)
   
 useEffect (() => {
 const getCharacter = async () => { 
@@ -44,7 +56,6 @@ const getCharacter = async () => {
 
   return (
     <>
-    <NavBar />
     <Header />
       <h1 className='title'>Rick and Morty Universe</h1>
       
