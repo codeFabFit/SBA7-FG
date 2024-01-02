@@ -55,7 +55,7 @@ const Episodes = () => {
         </div>
         <div className="col-8">
         <div className='row'>
-            <CharacterDisplay results={results}/>
+            <CharacterDisplay page="/episodes/" results={results}/>
         </div>
         </div>
         </div>

@@ -15,6 +15,8 @@ import NavBar from './components/NavBar'
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import Episodes from './components/Episodes'
 import Location from './components/Location'
+import CharDetails from './components/CharDetails'
+import './app.css'
 
 function App() {
   return (
@@ -22,10 +24,17 @@ function App() {
       <div className='App'>
         <NavBar />
       </div>
+      {/* Routes of each path */}
 <Routes>
   <Route path='/' element={<Home/>} />
+  <Route path='/:id' element={<CharDetails/>} />
+
   <Route path='/episodes' element={<Episodes/>} />
+  <Route path='/episodes/:id' element={<CharDetails/>} />
+
   <Route path='/location' element={<Location/>} />
+  <Route path='/location/:id' element={<CharDetails/>} />
+ 
 
 </Routes>
     </Router>
@@ -41,7 +50,7 @@ const Home = () => {
   const [info, results] = fetchedData
   
   console.log(pageNumber)
-  console.log(results)
+  console.log(searchTerm)
   
 useEffect (() => {
 const getCharacter = async () => { 
@@ -82,7 +91,8 @@ const getCharacter = async () => {
       <CharacterDisplay 
       // formData={setFormData}
       results={results}
-      characters= {setCharacter} />
+      characters= {setCharacter} 
+      page="/"/>
       <br />
       <br />
      

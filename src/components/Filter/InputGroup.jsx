@@ -1,8 +1,9 @@
+/* eslint-disable react/jsx-key */
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import React from 'react'
 
-
+ // this is to figure out specific location or episodes
 const InputGroup = ({ total, name, setID }) => {
     
   return (
@@ -16,6 +17,7 @@ const InputGroup = ({ total, name, setID }) => {
 
     {[...Array(total).keys()].map((x)=>{
       return (
+        //do not change anything from here
       <option 
       value = { x + 1 }
       >
@@ -24,11 +26,13 @@ const InputGroup = ({ total, name, setID }) => {
          );
     })}
     
-    console.log(total)
+    {/* console.log(total) */}
   </select>
+
   {/* <button className="btn btn-outline-secondary" type="button">Button</button> */}
 </div>
-    
+    // do not change anything above, drop downs are working fine for both location and epsiode
+    // still struggling to get it the display of each character to show
   )
 }
 

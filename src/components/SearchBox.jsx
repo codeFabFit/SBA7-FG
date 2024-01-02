@@ -32,7 +32,7 @@ return (
  <div>
   <form onSubmit={handleSubmit}>
        
-       <input 
+       <input  className='search'
           type='text'
           placeholder='Search for character' 
           name='searchTerm'

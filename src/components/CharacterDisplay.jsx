@@ -2,6 +2,7 @@
 
 
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 // const CharacterDisplay = ({ results }) => {
 //     let display;
@@ -39,7 +40,7 @@ import React from 'react'
 
 
 
-function CharacterDisplay({ props }) {
+function CharacterDisplay({ props, page }) {
    {
     let display = props
     // console.log(results);
@@ -49,7 +50,10 @@ function CharacterDisplay({ props }) {
             let {id, name, image, gender, status, location, origin} = x;
             return (
                 
-                <div key ={id} className="col-4 postion-relative">
+                <Link 
+                to ={`${page}${id}`} 
+                key ={id} 
+                className ="col-4 postion-relative">
                     <div className=''>
                         <img src={image} alt=" "className='img-fluid'/>
                         <div className="content">
@@ -65,7 +69,7 @@ function CharacterDisplay({ props }) {
                             </div>
                         </div>
                         <div className=" position-absolute badge bg-danger">{status}</div>
-                    </div>
+                    </Link>
             )
         })
     }
@@ -86,11 +90,9 @@ function CharacterDisplay({ props }) {
              </>
                 )
 
-            
-
                         }
   const loaded = () => {
-    return <h1>{props}</h1>
+    return <>{props}</> 
   }
   return props ? loading() : loaded();
 }

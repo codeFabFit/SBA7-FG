@@ -50,12 +50,14 @@ const Location = () => {
                     setID={setID}
                     name="Location"
                     total ={126}/>
+                    
                 </div>
                 </div>
         </div>
+    
         <div className="col-8">
         <div className='row'>
-            <CharacterDisplay results={results}/>
+            <CharacterDisplay page="/location/" results={results}/>
         </div>
         </div>
         </div>
