@@ -48,7 +48,7 @@ const Location = () => {
                    Need to go somewhere specific
                     <InputGroup 
                     setID={setID}
-                    name="Demention"
+                    name="Location"
                     total ={126}/>
                 </div>
                 </div>
