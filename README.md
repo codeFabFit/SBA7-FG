@@ -1,5 +1,10 @@
 # React + Vite
 
+Built With:
+React, CSS, JavaScript, Bootstrap, axios,  and Rick and Morty API
+
+This is an React Web Application using a Rick and Morty Api. With this API you are able to search for a character by name, find aired dated for episodes and locations for different demonsions.
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
