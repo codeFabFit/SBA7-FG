@@ -3,7 +3,7 @@ import React from 'react'
 import { useState } from 'react'
 import { getCharacter } from 'rickmortyapi'
 import { ReactPropTypes } from 'react'
-// import style from './SearchBox.css'
+import './SearchBox.css'
 
 
 function SearchBox() {

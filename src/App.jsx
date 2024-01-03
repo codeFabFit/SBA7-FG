@@ -84,18 +84,17 @@ const Home = () => {
   return (
     <>
     <Header />
-      <h1 className='title'>Rick and Morty Universe</h1>
+      <h2 className='title'>*Belch*</h2>
       
       {/* <section className="container"> */}
       {/* <div className="col-8">The Characters
       <div className="row">  */}
       <br />
-      <br />
       
       <SearchBox 
       setPageNumber={setPageNumber} 
       searchTerm={setSeachTerm} 
-      updatedFetchedData={updatedFetchedData}
+      fetchedData={updatedFetchedData}
       />
       <br />
       <br />
@@ -113,14 +112,14 @@ const Home = () => {
       <br />
       <br />
      
-      {/* <CharacterCard characters={CharacterCard}/> */}
+     
       <Paginate 
       info ={info}
       pageNumber={pageNumber} 
       setPageNumber={setPageNumber}/>
 
 
-      {/* <CharacterDisplay getCharacter={characters}/> */}
+     
       
       
       <br />
@@ -133,9 +132,3 @@ const Home = () => {
 
 
 export default App
-
-
-  {/* <div className="col">Cards</div>
-        <div className="col">Cards</div>
-        <div className="col">Cards</div>
-        <div className="col">Cards</div> */}

@@ -3,7 +3,8 @@
 
 import React from 'react'
 import { Link } from 'react-router-dom';
-import Characters from './Characters';
+import Episodes from './Episodes';
+// import Characters from './Characters';
 
 // const CharacterDisplay = ({ results }) => {
 //     let display;
@@ -107,23 +108,21 @@ function CharacterDisplay({ props, page }) {
 
         return ( 
              <>
-            {/* <Characters /> */}
             <section className="character-list">
-      
-      {Characters.map((chars, id) => {
-        return <Characters key={id} chars={chars} />;
+         {Episodes.map((chars, id) => {
+        return <Episodes key={id} chars={chars} />;
       })}
     </section>
              </>
                 )
 
                         }
-  const loaded = () => {
-    return <>
-    {props}
-    </> 
-  }
-  return props ? loading() : loaded();
+//   const loaded = () => {
+//     return <>
+//     {props}
+//     </> 
+//   }
+//   return props ? loading() : loaded();
 }
 
 export default CharacterDisplay

@@ -34,10 +34,10 @@ const Location = () => {
   return (
     <div className='container'>
         <div className='row mb-4'> 
-      <h1 className='text-center mb-4'>Looking for a specific Location</h1>
+      <h2 className='text-center mb-4'>Looking for a specific Location</h2>
       <br>
       </br>
-      <h1 className='text-center'>Location: {name} </h1>
+      <h1 className='text-center'> <code className='location'>Location : </code> {name} </h1>
         <h4 className='text-center'> {dimension}</h4>
 
 
@@ -45,7 +45,7 @@ const Location = () => {
             <div className="col-3">
                 <div className='text-center mb-4'>
 
-                   Need to go somewhere specific
+                   GRAB THE PORTAL GUN
                     <InputGroup 
                     setID={setID}
                     name="Location"

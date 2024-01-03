@@ -34,7 +34,7 @@ const Episodes = () => {
   return (
     <div className='container'>
         <div className='row mb-4'> 
-      <h1 className='text-center'>Looking for a specific episode</h1>
+      <h2 className='text-center'>Looking for a specific episode</h2>
       <br>
       </br>
       <h1 className='text-center'>Episode: {name} </h1>
