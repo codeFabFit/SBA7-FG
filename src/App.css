@@ -26,23 +26,8 @@ h2 {
 
 h2:hover{
  color: greenyellow;
- @keyframes :hover {
-  from {
-    transform: rotate(2deg)
-  }
- } to {
-  transform: rotate(-2deg)
- }
 }
 
-
-
-
-/* .btn btn-primary fs-5 {
-  display: flex;
-  justify-content: center;
-  box-shadow: 10px;
-} */
 
 .search{
   display: flex;
