@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 /* eslint-disable react-hooks/exhaustive-deps */
 // eslint-disable-next-line no-unused-vars
 import { react, useState, useEffect } from 'react'
@@ -18,7 +17,7 @@ import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import Episodes from './components/Episodes'
 import Location from './components/Location'
 import CharDetails from './components/CharDetails'
-import styles from './app.css'
+import '../App.css'
 
 function App() {
   return (
