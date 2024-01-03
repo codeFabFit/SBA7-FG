@@ -1,6 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 // eslint-disable-next-line no-unused-vars
 import { react, useState, useEffect } from 'react'
+import axios from 'axios'
 import "bootstrap/dist/css/bootstrap.min.css"
 import "bootstrap/dist/js/bootstrap"
 import Header from './components/Header'
@@ -51,22 +52,34 @@ const Home = () => {
   
   console.log(pageNumber)
   console.log(searchTerm)
+
+  useEffect(() => {
+    axios
+      .get("https://rickandmortyapi.com/api/character/")
+      .then(response => {
+        console.log('presenting',response.data.results);
+        setCharacter(response.data.results);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }, [axios]);
   
-useEffect (() => {
-const getCharacter = async () => { 
-    //  (`https://rickandmortyapi.com/api/character?name=${searchTerm}&page=${pageNumber}`);
-   const response = await fetch (`https://rickandmortyapi.com/api/character?name=${searchTerm}&page=${pageNumber}`);
-  //  `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${searchTerm}`
-  const data = await response.json()
+// useEffect (() => {
+// const getCharacter = async () => { 
+//     //  (`https://rickandmortyapi.com/api/character?name=${searchTerm}&page=${pageNumber}`);
+//    const response = await fetch (`https://rickandmortyapi.com/api/character?name=${searchTerm}&page=${pageNumber}`);
+//   //  `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${searchTerm}`
+//   const data = await response.json(character)
 
-  // getCharacter(data)
-  // console.log(character)
-  setCharacter(data.results)
-  console.log(data.results)
-} 
+//   // getCharacter(data)
+//   // console.log(character)
+//   setCharacter(data.results)
+//   console.log(data.results)
+// } 
 
-  getCharacter(results)
-}, [])
+//   getCharacter(results)
+// }, [])
 
   return (
     <>
@@ -78,6 +91,7 @@ const getCharacter = async () => {
       <div className="row">  */}
       <br />
       <br />
+      
       <SearchBox 
       setPageNumber={setPageNumber} 
       searchTerm={setSeachTerm} 
@@ -88,10 +102,13 @@ const getCharacter = async () => {
       {/* </div>
       </div> */}
       {/* </section> */}
+
+      <h1 className="text-center">The Characters</h1>
       <CharacterDisplay 
       // formData={setFormData}
+      
       results={results}
-      characters= {setCharacter} 
+      setCharacters= {setCharacter} 
       page="/"/>
       <br />
       <br />

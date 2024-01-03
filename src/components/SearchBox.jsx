@@ -6,24 +6,26 @@ import { ReactPropTypes } from 'react'
 // import style from './SearchBox.css'
 
 
-function SearchBox(props) {
+function SearchBox() {
   const [formData, setFormData] = useState ({searchTerm: ''})
-  let getCharacter
+  // let getCharacter
 
   const handleChange = (e) => {
       setFormData({
           ...formData,
           [e.target.name]: e.target.value})
-  }
+  
+console.log(e.target.value)
+}
 
   const handleSubmit = (e) => {
       e.preventDefault();
 
       // eslint-disable-next-line react/prop-types
-      // props.getCharacter(formData.searchTerm)
+      // getCharacter(formData.searchTerm)
 
       // const charactersResult =
-      // getCharacter.charactersSearch(formData.searchTerm)
+      // getCharacter.props(formData.searchTerm)
       // console.log(charactersResult)
   }
 

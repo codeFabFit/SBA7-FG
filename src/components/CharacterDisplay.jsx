@@ -3,6 +3,7 @@
 
 import React from 'react'
 import { Link } from 'react-router-dom';
+import Characters from './Characters';
 
 // const CharacterDisplay = ({ results }) => {
 //     let display;
@@ -40,59 +41,87 @@ import { Link } from 'react-router-dom';
 
 
 
-function CharacterDisplay({ props, page }) {
-   {
-    let display = props
-    // console.log(results);
 
-    if(props) {
-        display = props.map((x) =>{
-            let {id, name, image, gender, status, location, origin} = x;
-            return (
+//    {
+//     let display = props
+//     // console.log(results);
+
+//     if(props) {
+//         display = props.map((x) =>{
+//             let {id, name, image, gender, status, location, origin} = x;
+//             return (
                 
-                <Link 
-                to ={`${page}${id}`} 
-                key ={id} 
-                className ="col-4 postion-relative">
-                    <div className=''>
-                        <img src={image} alt=" "className='img-fluid'/>
-                        <div className="content">
-                            <div className="fs-4 fw-bold mb-4">{name}</div>
-                            <div className="content">
-                                <div className="fs-4">{gender}</div>
-                                <div className="fs-6">{origin.species}</div>
-                                <div className="fs-4">{status}</div>
-                                <div className="fs-6">{location.name}</div>
+//                 <Link 
+//                 to ={`${page}${id}`} 
+//                 key ={id} 
+//                 className ="col-4 postion-relative">
+//                     <div className=''>
+//                         <img src={image} alt=" "className='img-fluid'/>
+//                         <div className="content">
+//                             <div className="fs-4 fw-bold mb-4">{name}</div>
+//                             <div className="content">
+//                                 <div className="fs-4">{gender}</div>
+//                                 <div className="fs-6">{origin.species}</div>
+//                                 <div className="fs-4">{status}</div>
+//                                 <div className="fs-6">{location.name}</div>
                                 
 
-                                </div>
-                            </div>
-                        </div>
-                        <div className=" position-absolute badge bg-danger">{status}</div>
-                    </Link>
-            )
-        })
-    }
-}
+//                                 </div>
+//                             </div>
+//                         </div>
+//                         <div className=" position-absolute badge bg-danger">{status}</div>
+//                     </Link>
+//             )
+//         })
+//     }
+// }
+function CharacterDisplay({ props, page }) {
     const loading = () => {
+       props.map((x) =>{
+        let {id, name, image, gender, status, location, origin} = x;
+                    return (
+                        
+                        <Link 
+                        to ={`${page}${id}`} 
+                        key ={id} 
+                        className ="col-4 postion-relative">
+                            <div className=''>
+                                <img src={image} alt=" "className='img-fluid'/>
+                                <div className="content">
+                                    <div className="fs-4 fw-bold mb-4">{name}</div>
+                                    <div className="content">
+                                        <div className="fs-4">{gender}</div>
+                                        <div className="fs-6">{origin.species}</div>
+                                        <div className="fs-4">{status}</div>
+                                        <div className="fs-6">{location.name}</div>
+                                        
+        
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className=" position-absolute badge bg-danger">{status}</div>
+                            </Link>
+                    )
+    
+                    })
+
         return ( 
              <>
-             <h1>The character your looking for is ...</h1>
-              {/* <container className = "characterList"> */}
-                
-                    <h1>{props.character.name}</h1> 
-                    <h2>{props.character.gender}</h2>
-                    <img src={props.character.image} alt={props.character.name} />
-                    <h3>{props.character.episode}</h3>
-                    <h3>{props.character.species}</h3>
-                    
-                {/* </container>  */}
+            {/* <Characters /> */}
+            <section className="character-list">
+      
+      {Characters.map((chars, id) => {
+        return <Characters key={id} chars={chars} />;
+      })}
+    </section>
              </>
                 )
 
                         }
   const loaded = () => {
-    return <>{props}</> 
+    return <>
+    {props}
+    </> 
   }
   return props ? loading() : loaded();
 }
